@@ -1,42 +1,69 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* tailwind css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* coustom fonts */
+@font-face {
+  font-family: "MyCustomFontOne";
+  src: url("./assets/fonts/pxiByp8kv8JHgFVrLFj_Z1xlFQ.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyCustomFontTwo";
+  src: url("./assets/fonts/pxiByp8kv8JHgFVrLFj_Z1xlFQ.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyCustomFontThree";
+  src: url("./assets/fonts/pxiDyp8kv8JHgFVrJJLmg1hVF9eO.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyCustomFontFour";
+  src: url("./assets/pxiEyp8kv8JHgFVrJJfecg.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "MyCustomFontFive";
+  src: url("./assets/fonts/pxiGyp8kv8JHgFVrJJLucHtA.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  /* background:url(portfolio/src/assets/img/background.png) no-repeat center fixed !important; */
+  /* background: linear-gradient(135deg, #bd8eb0, #333e47,orangered); */
+  /* background: rgba(241, 134, 80, 0.61); */
+  background: black;
+  font-weight: 400;
+  line-height: 30px;
+  font-size: 16px;
+  font-family: Poppins, sans-serif;
+  overflow-x: hidden;
+}
+.navbar button{
+  border: 1px solid rgba(119,119,125,.5);
+}
+.hamburger-list ul li{
+  border-bottom: 1px solid white;
+}
+.swiper-slide {
+  height: 100px!important;
+  line-height: 300px;
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+.swiper-wrapper{
+  transition-timing-function: linear !important;
 }
