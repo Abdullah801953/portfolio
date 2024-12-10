@@ -20,10 +20,10 @@ const Navbar = () => {
         <div className="hamburger-list py-5 absolute right-[137px] top-20 w-56 min-h-40 bg-hamBurgerListBgColor text-white block md:hidden">
           <ul className="[&>li]:text-liColor font-semibold [&>li]:py-2 px-6">
             <li>
-              <Link to={"/"}>Home</Link>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#">About</a>
+              <Link to="/about">About</Link>
             </li>
             <li>
               <a href="#">Service</a>
@@ -42,19 +42,19 @@ const Navbar = () => {
       <div className="nav-items hidden md:block">
         <ul className="flex gap-7 [&>li]:text-liColor cursor-pointer items-center justify-center hover:[&>li]:text-orange-700 [&>li]:ease-in-out duration-700 [&>li]:font-medium">
           <li>
-            <a href="#">Home</a>
+            <Link to={"/"}>Home</Link>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link to={"/about"}>About</Link>
           </li>
           <li>
-            <a href="#">Service</a>
+            <Link to={"/service"}>Service</Link>
           </li>
           <li>
-            <a href="#">Work</a>
+            <Link to={"/work"}>Work</Link>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <Link to={"/contact"}>Contact</Link>
           </li>
         </ul>
       </div>
