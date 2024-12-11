@@ -38,6 +38,40 @@ const About = () => {
         </div>
         {/* hero section end */}
       </div>
+
+      <div className="grid grid-cols-12 w-4/5 mx-auto gap-7 mt-6">
+        <div className="col-span-12 lg:col-span-6 text-white">
+          <div className="bg-white/[0.06] backdrop-blur-md w-full h-[560px] rounded-3xl flex flex-col items-center relative">
+            <div className="w-1/2 lg:w-4/5 mx-auto mt-10">
+              
+            </div>
+          </div>
+        </div>
+        {/* hero section start */}
+        <div className="col-span-12 lg:col-span-6 text-white">
+          <div className=" bg-white/[0.06] backdrop-blur-lg w-full h-[560px] rounded-3xl">
+            <div className="px-10 py-10">
+              
+              
+             
+              
+             
+            </div>
+          </div>
+          
+        </div>
+        {/* hero section end */}
+      </div>
+
+      <div className="grid grid-cols-12 w-4/5 mx-auto gap-7 mt-6">
+        <div className="col-span-12 lg:col-span text-white">
+          <div className="bg-white/[0.06] backdrop-blur-md w-full h-[560px] rounded-3xl flex flex-col items-center relative">
+            <div className="w-1/2 lg:w-4/5 mx-auto mt-10">
+              
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

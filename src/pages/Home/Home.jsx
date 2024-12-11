@@ -213,72 +213,76 @@ const Home = () => {
           </div>
           <div className="">
             <div className="grid grid-cols-12 gap-5">
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
+              <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
+                <div className="w-full">
                   <img src={img.work_one} alt="" />
                 </div>
-                <div className="mx-2 my-2">
-                  <p>Design</p>
+                <div className="pl-5 pt-10">
+                  <p className="text-lg text-liColor">Design</p>
                 </div>
-                <div className="">
+                <div className="text-2xl text-liColor pl-5 pb-10">
                   <h4>Mobile Application Design</h4>
                 </div>
               </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
+              <div className="col-span-6 lg:col-span-4 w-30 h-[400] rounded-lg bg-orange-500 border border-gray-500 border-t-0 absolute z-10">
+{/* <h1>hover</h1> */}
+              </div>
+              <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0">
+                <div className="w-full">
                   <img src={img.work_two} alt="" />
                 </div>
-                <div className="">
-                  <p>Design</p>
+                <div className="pl-5 pt-10">
+                  <p className="text-lg text-liColor">Design</p>
                 </div>
-                <div className="">
+                <div className="text-2xl text-liColor pl-5 pb-10">
                   <h4>Mobile Application Design</h4>
                 </div>
               </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
+              <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0">
+                <div className="w-full">
                   <img src={img.work_three} alt="" />
                 </div>
-                <div className="">
-                  <p>Design</p>
+                <div className="pl-5 pt-10">
+                  <p className="text-lg text-liColor">Design</p>
                 </div>
-                <div className="">
+                <div className="text-2xl text-liColor pl-5 pb-10">
                   <h4>Mobile Application Design</h4>
                 </div>
               </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
+              <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0">
+                <div className="w-full">
                   <img src={img.work_four} alt="" />
                 </div>
-                <div className="">
-                  <p>Design</p>
+                <div className="pl-5 pt-10">
+                  <p className="text-lg text-liColor">Design</p>
                 </div>
-                <div className="">
+                <div className="text-2xl text-liColor pl-5 pb-10">
                   <h4>Mobile Application Design</h4>
                 </div>
               </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
+              <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0">
+                <div className="w-full">
                   <img src={img.work_three} alt="" />
                 </div>
-                <div className="">
-                  <p>Design</p>
+                <div className="pl-5 pt-10">
+                  <p className="text-lg text-liColor">Design</p>
                 </div>
-                <div className="">
+                <div className="text-2xl text-liColor pl-5 pb-10">
                   <h4>Mobile Application Design</h4>
                 </div>
               </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
+              <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0">
+                <div className="w-full">
                   <img src={img.work_one} alt="" />
                 </div>
-                <div className="">
-                  <p>Design</p>
+                <div className="pl-5 pt-10">
+                  <p className="text-lg text-liColor">Design</p>
                 </div>
-                <div className="">
+                <div className="text-2xl text-liColor pl-5 pb-10">
                   <h4>Mobile Application Design</h4>
                 </div>
               </div>
+              
             </div>
           </div>
         </div>
