@@ -10,6 +10,8 @@ import work_two from "../assets/img/work_two.jpg";
 import work_three from "../assets/img/work_three.jpg";
 import work_four from "../assets/img/work_four.jpg";
 import background_img from "../assets/img/background.png"
+import author1 from "../assets/img/author-1.jpg"
+import author2 from "../assets/img/author-2.jpg"
 
 const img = {
   logo,
@@ -23,6 +25,8 @@ const img = {
   work_two,
   work_three,
   work_four,
-  background_img
+  background_img,
+  author1,
+  author2
 };
 export default img ;

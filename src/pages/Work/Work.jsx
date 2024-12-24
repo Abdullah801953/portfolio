@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import img from "../../assets/img";
+import { FaExternalLinkAlt } from "react-icons/fa";
 const Work = () => {
   const [index, setIndex] = useState(1);
   return (
@@ -74,74 +75,228 @@ const Work = () => {
             </ul>
           </div>
           <div className="">
-            <div className="grid grid-cols-12 gap-5">
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
-                  <img src={img.work_one} alt="" />
+            {index === 1 ? (
+              <div className="grid grid-cols-12 gap-5">
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
+                  <div className="w-full">
+                    <img src={img.work_one} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
                 </div>
-                <div className="mx-2 my-2">
-                  <p>Design</p>
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
+                  <div className="w-full">
+                    <img src={img.work_two} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
                 </div>
-                <div className="">
-                  <h4>Mobile Application Design</h4>
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
+                  <div className="w-full">
+                    <img src={img.work_three} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
+                </div>
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
+                  <div className="w-full">
+                    <img src={img.work_four} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
+                </div>
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
+                  <div className="w-full">
+                    <img src={img.work_three} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
+                </div>
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
+                  <div className="w-full">
+                    <img src={img.work_one} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
                 </div>
               </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
-                  <img src={img.work_two} alt="" />
+            ) : (
+              ""
+            )}
+            {index === 2 ? (
+              <div className="grid grid-cols-12 gap-5">
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
+                  <div className="w-full">
+                    <img src={img.work_one} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
                 </div>
-                <div className="">
-                  <p>Design</p>
-                </div>
-                <div className="">
-                  <h4>Mobile Application Design</h4>
-                </div>
-              </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
-                  <img src={img.work_three} alt="" />
-                </div>
-                <div className="">
-                  <p>Design</p>
-                </div>
-                <div className="">
-                  <h4>Mobile Application Design</h4>
-                </div>
-              </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
-                  <img src={img.work_four} alt="" />
-                </div>
-                <div className="">
-                  <p>Design</p>
-                </div>
-                <div className="">
-                  <h4>Mobile Application Design</h4>
-                </div>
-              </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
-                  <img src={img.work_three} alt="" />
-                </div>
-                <div className="">
-                  <p>Design</p>
-                </div>
-                <div className="">
-                  <h4>Mobile Application Design</h4>
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
+                  <div className="w-full">
+                    <img src={img.work_one} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
                 </div>
               </div>
-              <div className="col-span-6 lg:col-span-4 w-30 h-[300px] rounded-lg bg-transparent border border-gray-500">
-                <div className="">
-                  <img src={img.work_one} alt="" />
-                </div>
-                <div className="">
-                  <p>Design</p>
-                </div>
-                <div className="">
-                  <h4>Mobile Application Design</h4>
+            ) : (
+              ""
+            )}
+            {index === 3 ? (
+              <div className="grid grid-cols-12 gap-5">
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
+                  <div className="w-full">
+                    <img src={img.work_one} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
                 </div>
               </div>
-            </div>
+            ) : (
+              ""
+            )}
+            {index === 4 ? (
+              <div className="grid grid-cols-12 gap-5">
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
+                  <div className="w-full">
+                    <img src={img.work_one} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+            {index === 5 ? (
+              <div className="grid grid-cols-12 gap-5">
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
+                  <div className="w-full">
+                    <img src={img.work_one} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
+                </div>
+                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
+                  <div className="w-full">
+                    <img src={img.work_one} alt="" />
+                  </div>
+                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
+                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
+                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                    </div>
+                  </div>
+                  <div className="pl-5 pt-10">
+                    <p className="text-lg text-liColor">Design</p>
+                  </div>
+                  <div className="text-2xl text-liColor pl-5 pb-10">
+                    <h4>Mobile Application Design</h4>
+                  </div>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
           </div>
         </div>
       </div>
