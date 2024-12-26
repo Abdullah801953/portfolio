@@ -73,7 +73,7 @@ const Home = () => {
               <div className="mb-5">
                 <p>Hello There!</p>
               </div>
-              <div className="text-3xl lg:text-[40px] mb-5 leading-snug">
+              <div className="text-3xl lg:text-[40px] mb-5 leading-snug h-[170px]">
                 <h1 ref={el}></h1>
               </div>
               <div className="flex items-center gap-5 mb-5">
