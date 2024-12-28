@@ -2,8 +2,6 @@ import React from "react";
 import img from "../../assets/img";
 import { IoMail } from "react-icons/io5";
 import { FaBook } from "react-icons/fa";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/autoplay";
 const About = () => {
@@ -12,8 +10,8 @@ const About = () => {
       <div className="grid grid-cols-12 w-4/5 mx-auto gap-7">
         <div className="col-span-12 lg:col-span-4 text-white">
           <div className="bg-white/[0.06] backdrop-blur-md w-full h-[470px] rounded-3xl flex flex-col items-center relative">
-            <div className="w-1/2 lg:w-4/5 mx-auto mt-10">
-              <img src={img.profile_pic} alt="profile_pic" />
+            <div className="w-1/2 lg:w-4/5 mx-auto mt-10 flex justify-center mb-9">
+              <img src={img.my_profile} alt="profile_pic" />
             </div>
           </div>
         </div>

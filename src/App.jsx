@@ -11,8 +11,7 @@ import Contact from "./pages/Contact/Contact"
 const App = () => {
   return (
     <div className="w-full h-full">
-      {/* <div className="absolute top-28 left-24 bg-orange-600 w-28 h-28 rounded-full"></div>
-      <div className="absolute bg-pink-700 w-20 h-20 top-[720px] left-[481px] rounded-md"></div> */}
+      {/* <div className="absolute top-28 left-24 bg-orange-600 w-28 h-28 rounded-full"></div> */}
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />

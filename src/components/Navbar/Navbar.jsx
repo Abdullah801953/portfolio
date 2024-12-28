@@ -8,8 +8,12 @@ const Navbar = () => {
   return (
     <div className="navbar w-full py-10 flex justify-around items-center gap-5 md:gap-0">
       <div className="logo cursor-pointer">
-        <img src={img.logo} alt="logo" className="w-40 md:w-32" />
+        <Link to={"/"}>
+          {/* <img src={img.logo} alt="logo" className="w-32"/> */}
+          <span className="text-white font-extrabold text-3xl">Abdullah</span>
+        </Link>
       </div>
+
       <GiHamburgerMenu
         className="text-3xl text-liColor block md:hidden relative"
         onClick={() => {
@@ -17,7 +21,7 @@ const Navbar = () => {
         }}
       />
       {toggler ? (
-        <div className="hamburger-list py-5 absolute right-[137px] top-20 w-56 min-h-40 bg-hamBurgerListBgColor text-white block md:hidden">
+        <div className="hamburger-list py-5 absolute right-[137px] top-20 w-56 min-h-40 bg-hamBurgerListBgColor text-white block md:hidden z-10">
           <ul className="[&>li]:text-liColor font-semibold [&>li]:py-2 px-6">
             <li>
               <Link to="/">Home</Link>

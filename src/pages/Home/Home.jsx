@@ -11,13 +11,14 @@ import { Autoplay } from "swiper/modules";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/autoplay";
+import { Link } from "react-router-dom";
 const Home = () => {
   const [index, setIndex] = useState(1);
   const el = React.useRef(null);
   React.useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        `I’m Bentos Walker, a product designer crafting user-centric
+        `I’m Abdullah Khan, a fullstack developer crafting user-centric
       design with pixel-perfect precision.`,
       ],
       typeSpeed: 20,
@@ -32,15 +33,15 @@ const Home = () => {
     <div className="home">
       <div className="grid grid-cols-12 w-4/5 mx-auto gap-7">
         <div className="col-span-12 lg:col-span-4 text-white">
-          <div className="bg-white/[0.06] backdrop-blur-md w-full h-[650px] rounded-3xl flex flex-col items-center relative">
-            <div className="w-1/2 lg:w-4/5 mx-auto mt-10">
-              <img src={img.profile_pic} alt="profile_pic" />
+          <div className="bg-white/[0.06] backdrop-blur-sm w-full h-[650px] rounded-3xl flex flex-col items-center relative justify-center">
+            <div className="w-1/2 lg:w-4/5 mx-auto mt-10 mb-10">
+              <img src={img.my_profile} alt="profile_pic" />
             </div>
-            <div className="text-center text-[40px] font-bold mb-2">
-              <h2>Bentos Walker</h2>
+            <div className="text-center text-[40px] font-bold mb-4">
+              <h2>Abdullah Khan</h2>
             </div>
-            <div className="mx-auto text-center text-[16px] w-4/5 text-liColor mb-2">
-              <p>I am a Web Designer based in san francisco.</p>
+            <div className="mx-auto text-center text-[16px] w-4/5 text-liColor mb-4">
+              <p>I am a Web Developer based in New Delhi.</p>
             </div>
             <div className="flex justify-center gap-10 [&>div>a]:text-2xl text-liColor">
               <div className="border rounded-lg px-2 py-2 w-10 h-10">
@@ -217,50 +218,52 @@ const Home = () => {
               <div className="grid grid-cols-12 gap-5">
                 <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
                   <div className="w-full">
-                    <img src={img.work_one} alt="" />
+                    <img src={img.project1} alt="" className="" />
                   </div>
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
                     <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                      <Link to={"https://nest-shop-project.netlify.app"} target="_blank">
+                        <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                      </Link>
                     </div>
                   </div>
                   <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
+                    <p className="text-lg text-liColor">Grocery App</p>
                   </div>
                   <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
+                    <h4>Nest Grocery Web App</h4>
                   </div>
                 </div>
                 <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
                   <div className="w-full">
-                    <img src={img.work_two} alt="" />
+                    <img src={img.project2} alt="" />
                   </div>
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
                     <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                      <Link to={"https://mehtatransportcorporations-hi3pg6xa8-abdullah801953s-projects.vercel.app/"} target="_blank"><FaExternalLinkAlt className="text-xl text-center cursor-pointer" /></Link>
                     </div>
                   </div>
                   <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
+                    <p className="text-lg text-liColor">Transportation Webstie</p>
                   </div>
                   <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
+                    <h4>Mehta Transport Corporations</h4>
                   </div>
                 </div>
                 <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
                   <div className="w-full">
-                    <img src={img.work_three} alt="" />
+                    <img src={img.project3} alt="" />
                   </div>
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
                     <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                      <Link to={"https://fayaz-international-com.vercel.app/"}><FaExternalLinkAlt className="text-xl text-center cursor-pointer" target="_blank"/></Link>
                     </div>
                   </div>
                   <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
+                    <p className="text-lg text-liColor">E-Education</p>
                   </div>
                   <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
+                    <h4>Fayaz International</h4>
                   </div>
                 </div>
                 <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">

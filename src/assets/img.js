@@ -12,6 +12,10 @@ import work_four from "../assets/img/work_four.jpg";
 import background_img from "../assets/img/background.png"
 import author1 from "../assets/img/author-1.jpg"
 import author2 from "../assets/img/author-2.jpg"
+import my_profile from "../assets/img/my-profile.png"
+import project1 from "../assets/img/project1.jpg"
+import project2 from "../assets/img/project2.jpg"
+import project3 from "../assets/img/project3.jpg"
 
 const img = {
   logo,
@@ -27,6 +31,10 @@ const img = {
   work_four,
   background_img,
   author1,
-  author2
+  author2,
+  my_profile,
+  project1,
+  project2,
+  project3
 };
 export default img ;
