@@ -2,22 +2,38 @@ import React from "react";
 import { IoLocation } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
-import { FaDownload } from "react-icons/fa6";
+import { motion } from "framer-motion";
+
 const Contact = () => {
   return (
     <div>
-      <div className="grid grid-cols-12 w-4/5 mx-auto gap-7 mt-6">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-12 w-4/5 mx-auto gap-7 mt-6">
         <div className="col-span-12 lg:col-span text-white">
-          <div className="bg-white/[0.06] backdrop-blur-md w-full h-auto py-11 rounded-3xl flex flex-col items-center relative">
+          <div className="bg-lightBg dark:bg-[#121214] w-full h-auto py-11 rounded-3xl flex flex-col items-center relative">
             <div className="w-full lg:w-4/5 mx-auto mt-10">
-              <div className="[&>p]:text-[16px] text-liColor mb-6">
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+                className="[&>p]:text-[16px] text-liColor mb-6">
                 <h6 className="text-center">contact</h6>
-              </div>
-              <div className="[&>h1]:text-[50px] text-white mb-7">
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+                className="[&>h1]:text-[50px] text-white mb-7">
                 <h1 className="font-[500] text-center">
                   Get in Touch with Me!
                 </h1>
-              </div>
+              </motion.div>
               <div className="grid grid-cols-12 pt-10 gap-5">
                 <div className="col-span-6 lg:col-span-5 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 relative">
                   <div className="px-11 pt-11">
@@ -89,7 +105,7 @@ const Contact = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -1,24 +1,41 @@
 import React, { useState } from "react";
 import img from "../../assets/img";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 const Work = () => {
   const [index, setIndex] = useState(1);
   return (
-    <div className="work">
+    <div>
       {/* project section start */}
-      <div className="grid grid-cols-12 w-4/5 mx-auto gap-7">
-        <div className="col-span-12 lg:col-span-12 w-full mx-auto h-auto bg-white/[0.06] backdrop-blur-lg rounded-3xl px-14 py-14">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-12 w-4/5 mx-auto gap-7">
+        <div className="col-span-12 lg:col-span-12 w-full mx-auto h-auto bg-lightBg dark:bg-[#121214] rounded-3xl px-14 py-14">
           <div className="w-full lg:w-1/2 m-auto">
-            <div className="[&>h1]:text-[50px] text-white mb-6">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="[&>h1]:text-[50px] text-white mb-6">
               <h1 className="font-[500] text-center">Works & Projects</h1>
-            </div>
-            <div className="[&>p]:text-[16px] text-liColor mb-6">
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              viewport={{ once: true }}
+              className="[&>p]:text-[16px] text-liColor mb-6">
               <p className="text-center">
                 Check out some of my design projects, meticulously crafted with
                 love and dedication, each one reflecting the passion and soul I
                 poured into every detail.
               </p>
-            </div>
+            </motion.div>
           </div>
           <div className="[&>ul]:flex mb-5">
             <ul className="[&>li>a]:text-liColor gap-10">
@@ -299,7 +316,7 @@ const Work = () => {
             )}
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* project section end */}
     </div>

@@ -12,6 +12,8 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/autoplay";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+
 const Home = () => {
   const [index, setIndex] = useState(1);
   const el = React.useRef(null);
@@ -30,69 +32,79 @@ const Home = () => {
     };
   }, []);
   return (
-    <div className="home">
+    <div>
       <div className="grid grid-cols-12 w-4/5 mx-auto gap-7">
-        <div className="col-span-12 lg:col-span-4 text-white">
-          <div className="bg-white/[0.06] backdrop-blur-sm w-full h-[650px] rounded-3xl flex flex-col items-center relative justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="col-span-12 lg:col-span-4 text-white">
+          <div className="bg-lightBg dark:bg-[#121214] w-full h-[650px] rounded-3xl flex flex-col items-center relative justify-center">
             <div className="w-1/2 lg:w-4/5 mx-auto mt-10 mb-10">
-              <img src={img.my_profile} alt="profile_pic" />
+              <img src={img.my_profile} alt="profile_pic" loading="lazy" />
             </div>
             <div className="text-center text-[40px] font-bold mb-4">
-              <h2>Abdullah Khan</h2>
+              <h2 className="text-white">Abdullah Khan</h2>
             </div>
             <div className="mx-auto text-center text-[16px] w-4/5 text-liColor mb-4">
-              <p>I am a Web Developer based in New Delhi.</p>
+              <p className="text-white">I am a Web Developer based in New Delhi.</p>
             </div>
             <div className="flex justify-center gap-10 [&>div>a]:text-2xl text-liColor">
-              <div className="border rounded-lg px-2 py-2 w-10 h-10">
+              <div className="border rounded-lg px-2 py-2 w-10 h-10 text-white border-white">
                 <a href="#">
                   <FaInstagram />
                 </a>
               </div>
-              <div className="border rounded-lg px-2 py-2 w-10 h-10">
+              <div className="border rounded-lg px-2 py-2 w-10 h-10 text-white border-white">
                 <a href="#">
                   <FaWhatsapp />
                 </a>
               </div>
-              <div className="border rounded-lg px-2 py-2 w-10 h-10">
+              <div className="border rounded-lg px-2 py-2 w-10 h-10 text-white border-white">
                 <a href="#">
                   <FaLinkedin />
                 </a>
               </div>
-              <div className="border rounded-lg px-2 py-2 w-10 h-10">
+              <div className="border rounded-lg px-2 py-2 w-10 h-10 text-white border-white">
                 <a href="#">
                   <FaGithubSquare />
                 </a>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* hero section start */}
-        <div className="col-span-12 lg:col-span-8 text-white">
-          <div className=" bg-white/[0.06] backdrop-blur-lg w-full h-[400px] rounded-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="col-span-12 lg:col-span-8 text-white">
+          <div className=" bg-lightBg dark:bg-[#121214] w-full h-[400px] rounded-3xl">
             <div className="px-10 py-10">
               <div className="mb-5">
-                <p>Hello There!</p>
+                <p className="text-white">Hello There!</p>
               </div>
-              <div className="text-3xl lg:text-[40px] mb-5 leading-snug h-[170px]">
-                <h1 ref={el}></h1>
+              <div className="mb-1 leading-snug h-[170px]">
+                <h1 ref={el} className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-white"></h1>
               </div>
               <div className="flex items-center gap-5 mb-5">
                 <div className="w-3 h-3 bg-[#0f0] rounded-full"></div>
-                <p>Available for Freelancing</p>
+                <p className="text-white">Available for Freelancing</p>
               </div>
               <div className="[&>button]:bg-orange-600">
-                <button className="w-36 py-2 px-3 rounded-xl">
+                <button className="w-36 py-2 px-3 rounded-xl text-white">
                   Download CV <FaDownload className="inline mb-2" />
                 </button>
               </div>
             </div>
           </div>
           <div className="col-span-12 lg:col-span-8 text-white mt-8">
-            <div className=" bg-white/[0.06] backdrop-blur-lg w-full h-[200px] rounded-3xl">
+            <div className=" bg-lightBg dark:bg-[#121214] w-full h-auto rounded-3xl">
               <div className="px-5 pt-10">
                 <div className="text-[22px] font-bold">
-                  <h3>Company I Worked With</h3>
+                  <h3 className="text-white">Company I Worked With</h3>
                 </div>
               </div>
               <div className="">
@@ -102,14 +114,14 @@ const Home = () => {
                   loop={true}
                   slidesPerView={5}
                   autoplay={{
-                    delay: 1, // Slide change hone ka time (milliseconds)
-                    disableOnInteraction: false, // User ke interaction ke baad bhi autoplay chalu rahe
+                    delay: 1,
+                    disableOnInteraction: false, 
                   }}
                   speed={3000}
                   spaceBetween={8}
                 >
                   <SwiperSlide>
-                    <img src={img.slide_one} alt="" />
+                    <img src={img.slide_one} alt="" className="w-[20px]" />
                   </SwiperSlide>
                   <SwiperSlide>
                     <img src={img.slide_two} alt="" />
@@ -142,23 +154,33 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* hero section end */}
 
         {/* project section start */}
-        <div className="col-span-12 lg:col-span-12 w-full mx-auto h-auto bg-white/[0.06] backdrop-blur-lg rounded-3xl px-14 py-14">
-          <div className="w-full lg:w-1/2 m-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="col-span-12 lg:col-span-12 w-full mx-auto h-auto bg-lightBg dark:bg-[#121214] rounded-3xl px-14 py-14">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="w-full lg:w-1/2 m-auto">
             <div className="[&>h1]:text-[50px] text-white mb-6">
-              <h1 className="font-[500] text-center">Works & Projects</h1>
+              <h1 className="font-[500] text-center text-white">Works & Projects</h1>
             </div>
             <div className="[&>p]:text-[16px] text-liColor mb-6">
-              <p className="text-center">
+              <p className="text-center text-white">
                 Check out some of my design projects, meticulously crafted with
                 love and dedication, each one reflecting the passion and soul I
                 poured into every detail.
               </p>
             </div>
-          </div>
+          </motion.div>
           <div className="[&>ul]:flex mb-5">
             <ul className="[&>li>a]:text-liColor gap-10">
               <li
@@ -218,11 +240,14 @@ const Home = () => {
               <div className="grid grid-cols-12 gap-5">
                 <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
                   <div className="w-full">
-                    <img src={img.project1} alt="" className="" />
+                    <img src={img.project1} alt="" loading="lazy" />
                   </div>
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
                     <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <Link to={"https://nest-shop-project.netlify.app"} target="_blank">
+                      <Link
+                        to={"https://nest-shop-project.netlify.app"}
+                        target="_blank"
+                      >
                         <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
                       </Link>
                     </div>
@@ -240,11 +265,20 @@ const Home = () => {
                   </div>
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
                     <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <Link to={"https://mehtatransportcorporations-hi3pg6xa8-abdullah801953s-projects.vercel.app/"} target="_blank"><FaExternalLinkAlt className="text-xl text-center cursor-pointer" /></Link>
+                      <Link
+                        to={
+                          "https://mehtatransportcorporations-hi3pg6xa8-abdullah801953s-projects.vercel.app/"
+                        }
+                        target="_blank"
+                      >
+                        <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
+                      </Link>
                     </div>
                   </div>
                   <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Transportation Webstie</p>
+                    <p className="text-lg text-liColor">
+                      Transportation Webstie
+                    </p>
                   </div>
                   <div className="text-2xl text-liColor pl-5 pb-10">
                     <h4>Mehta Transport Corporations</h4>
@@ -256,7 +290,12 @@ const Home = () => {
                   </div>
                   <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
                     <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <Link to={"https://fayaz-international-com.vercel.app/"}><FaExternalLinkAlt className="text-xl text-center cursor-pointer" target="_blank"/></Link>
+                      <Link to={"https://fayaz-international-com.vercel.app/"}>
+                        <FaExternalLinkAlt
+                          className="text-xl text-center cursor-pointer"
+                          target="_blank"
+                        />
+                      </Link>
                     </div>
                   </div>
                   <div className="pl-5 pt-10">
@@ -439,7 +478,7 @@ const Home = () => {
               ""
             )}
           </div>
-        </div>
+        </motion.div>
         {/* project section end */}
       </div>
     </div>

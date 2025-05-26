@@ -2,22 +2,34 @@ import React from "react";
 import img from "../../assets/img";
 import { IoMail } from "react-icons/io5";
 import { FaBook } from "react-icons/fa";
+import { motion } from "framer-motion";
+
 import "swiper/css";
 import "swiper/css/autoplay";
 const About = () => {
   return (
-    <div className="about">
-      <div className="grid grid-cols-12 w-4/5 mx-auto gap-7">
+    <div>
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-12 w-4/5 mx-auto gap-7">
         <div className="col-span-12 lg:col-span-4 text-white">
-          <div className="bg-white/[0.06] backdrop-blur-md w-full h-[470px] rounded-3xl flex flex-col items-center relative">
+          <div className="bg-lightBg dark:bg-[#121214] w-full h-[470px] rounded-3xl flex flex-col items-center relative">
             <div className="w-1/2 lg:w-4/5 mx-auto mt-10 flex justify-center mb-9">
               <img src={img.my_profile} alt="profile_pic" />
             </div>
           </div>
         </div>
         {/* hero section start */}
-        <div className="col-span-12 lg:col-span-8 text-white">
-          <div className=" bg-white/[0.06] backdrop-blur-lg w-full h-[470px] rounded-3xl">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+          className="col-span-12 lg:col-span-8 text-white">
+          <div className=" bg-lightBg dark:bg-[#121214] w-full h-[470px] rounded-3xl">
             <div className="px-10 py-10">
               <div className="text-3xl lg:text-[40px] mb-5 leading-snug">
                 <h1>I’m Bentos Walker, a product designer.</h1>
@@ -49,13 +61,18 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* hero section end */}
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-12 w-4/5 mx-auto gap-7 mt-6">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-12 w-4/5 mx-auto gap-7 mt-6">
         <div className="col-span-12 lg:col-span-6 text-white">
-          <div className="bg-white/[0.06] backdrop-blur-md w-full h-[560px] rounded-3xl flex flex-col items-center relative">
+          <div className="bg-lightBg dark:bg-[#121214] w-full h-[560px] rounded-3xl flex flex-col items-center relative">
             <div className="w-1/2 lg:w-4/5 mx-auto mt-10">
               <div className="text-2xl font-semibold">
                 <h2>Experience</h2>
@@ -113,7 +130,7 @@ const About = () => {
         </div>
 
         <div className="col-span-12 lg:col-span-6 text-white">
-          <div className=" bg-white/[0.06] backdrop-blur-lg w-full h-[560px] rounded-3xl">
+          <div className=" bg-lightBg dark:bg-[#121214] w-full h-[560px] rounded-3xl">
             <div className="px-10 py-10">
               <div className="text-2xl font-semibold">
                 <h2>Education</h2>
@@ -170,11 +187,16 @@ const About = () => {
           </div>
         </div>
         {/* hero section end */}
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-12 w-4/5 mx-auto gap-7 mt-6">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+        viewport={{ once: true }}
+        className="grid grid-cols-12 w-4/5 mx-auto gap-7 mt-6">
         <div className="col-span-12 lg:col-span text-white">
-          <div className="bg-white/[0.06] backdrop-blur-md w-full h-[560px] rounded-3xl flex flex-col items-center relative">
+          <div className="bg-lightBg dark:bg-[#121214] w-full h-[560px] rounded-3xl flex flex-col items-center relative">
             <div className="w-full lg:w-4/5 mx-auto mt-10">
               <div className="[&>p]:text-[16px] text-liColor mb-6">
                 <h6 className="text-center">Testimonials</h6>
@@ -203,12 +225,12 @@ const About = () => {
                   </div>
                 </div>
 
-                
+
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
