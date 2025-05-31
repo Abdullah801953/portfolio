@@ -57,7 +57,7 @@ const Navbar = () => {
         <button
           style={{ border: "none" }}
           onClick={() => setDarkMode(!darkMode)}
-          className="text-black dark:text-white"
+          className="text-black dark:text-white block md:hidden"
           aria-label="Toggle Dark Mode"
         >
           {darkMode ? (
@@ -117,9 +117,22 @@ const Navbar = () => {
             <Link to={"/contact"}>Contact</Link>
           </li>
         </ul>
+        
       </div>
 
       <div className="text-white font-medium hidden md:flex items-center gap-5">
+      <button
+          style={{ border: "none" }}
+          onClick={() => setDarkMode(!darkMode)}
+          className="text-black dark:text-white"
+          aria-label="Toggle Dark Mode"
+        >
+          {darkMode ? (
+            <MdWbSunny className="text-2xl" />
+          ) : (
+            <MdDarkMode className="text-2xl" />
+          )}
+        </button>
         <button className="w-32 py-2 rounded-2xl hover:bg-orange-700 ease-in-out duration-500 text-black dark:text-white">
           Hire Me <LiaHandshakeSolid className="inline text-2xl my-1" />
         </button>

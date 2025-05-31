@@ -7,7 +7,7 @@ import Card from "../../components/Card/Card";
 const Work = () => {
   const [index, setIndex] = useState(1);
   return (
-    <div className="grid grid-cols-12 w-4/5 mx-auto gap-7 mt-9">
+    <div className="w-[90%] sm:w-[95%] lg:w-4/5 mx-auto grid grid-cols-12 gap-5 mt-9">
       {/* project section start */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
