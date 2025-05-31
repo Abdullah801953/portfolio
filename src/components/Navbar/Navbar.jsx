@@ -13,7 +13,6 @@ const Navbar = () => {
   );
   const [scrolled, setScrolled] = useState(false);
 
-  // Added error handling for localStorage and improved readability
   useEffect(() => {
     try {
       const userPref = localStorage.getItem("theme");
@@ -30,8 +29,6 @@ const Navbar = () => {
     }
   }, []);
 
-
-  // Enhanced dark mode toggle logic
   useEffect(() => {
     try {
       if (darkMode) {
@@ -46,16 +43,29 @@ const Navbar = () => {
     }
   }, [darkMode]);
 
- 
-
-  // Added a default background color for the navbar to ensure transparency issue is resolved
   return (
-    <div className="navbar w-full flex justify-around items-center gap-5 md:gap-0 fixed top-0 z-50 transition-all duration-300 py-5 bg-[#fefeb8]  dark:bg-black">
-
-      <div className="logo cursor-pointer">
+    <div className="navbar w-full flex justify-around items-center gap-5 md:gap-0 fixed top-0 z-50 transition-all duration-300 py-5 bg-[#fefeb8] dark:bg-black">
+      
+      <div className="logo cursor-pointer flex items-center gap-3">
         <Link to={"/"}>
-          <span className="text-black dark:text-white font-extrabold text-3xl">Abdullah</span>
+          <span className="text-black dark:text-white font-extrabold text-3xl">
+            Abdullah
+          </span>
         </Link>
+
+        {/* Dark mode toggle right after logo */}
+        <button
+          style={{ border: "none" }}
+          onClick={() => setDarkMode(!darkMode)}
+          className="text-black dark:text-white"
+          aria-label="Toggle Dark Mode"
+        >
+          {darkMode ? (
+            <MdWbSunny className="text-2xl" />
+          ) : (
+            <MdDarkMode className="text-2xl" />
+          )}
+        </button>
       </div>
 
       <GiHamburgerMenu
@@ -64,6 +74,7 @@ const Navbar = () => {
           setToggler(!toggler);
         }}
       />
+
       {toggler ? (
         <div className="hamburger-list py-5 absolute right-[137px] top-20 w-56 min-h-40 bg-hamBurgerListBgColor text-white block md:hidden z-10">
           <ul className="text-black dark:text-white font-semibold [&>li]:py-2 px-6">
@@ -87,6 +98,7 @@ const Navbar = () => {
       ) : (
         ""
       )}
+
       <div className="nav-items hidden md:block">
         <ul className="flex gap-7 text-black dark:text-white cursor-pointer items-center justify-center hover:[&>li]:text-orange-700 [&>li]:ease-in-out duration-700 [&>li]:font-medium">
           <li>
@@ -106,12 +118,11 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
+
       <div className="text-white font-medium hidden md:flex items-center gap-5">
         <button className="w-32 py-2 rounded-2xl hover:bg-orange-700 ease-in-out duration-500 text-black dark:text-white">
           Hire Me <LiaHandshakeSolid className="inline text-2xl my-1" />
         </button>
-        <button style={{ border: "none" }} onClick={() => setDarkMode(!darkMode)}>{darkMode ? <MdWbSunny className="text-2xl text-black dark:text-white" /> : <MdDarkMode className="text-2xl text-blue-950" />}</button>
-
       </div>
     </div>
   );
