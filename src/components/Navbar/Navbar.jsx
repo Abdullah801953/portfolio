@@ -11,34 +11,49 @@ const Navbar = () => {
   const [darkMode, setDarkMode] = useState(
     localStorage.getItem("theme") === "dark"
   );
+  const [scrolled, setScrolled] = useState(false);
 
+  // Added error handling for localStorage and improved readability
   useEffect(() => {
-    const userPref = localStorage.getItem("theme");
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    try {
+      const userPref = localStorage.getItem("theme");
+      const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-    if (userPref) {
-      setDarkMode(userPref === "dark");
-    } else {
-      setDarkMode(systemPrefersDark);
-      localStorage.setItem("theme", systemPrefersDark ? "dark" : "light");
+      if (userPref) {
+        setDarkMode(userPref === "dark");
+      } else {
+        setDarkMode(systemPrefersDark);
+        localStorage.setItem("theme", systemPrefersDark ? "dark" : "light");
+      }
+    } catch (error) {
+      console.error("Error accessing localStorage:", error);
     }
   }, []);
 
 
+  // Enhanced dark mode toggle logic
   useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
+    try {
+      if (darkMode) {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      }
+    } catch (error) {
+      console.error("Error updating dark mode:", error);
     }
   }, [darkMode]);
+
+ 
+
+  // Added a default background color for the navbar to ensure transparency issue is resolved
   return (
-    <div className="navbar w-full py-10 flex justify-around items-center gap-5 md:gap-0">
+    <div className="navbar w-full flex justify-around items-center gap-5 md:gap-0 fixed top-0 z-50 transition-all duration-300 py-5 bg-[#fefeb8]  dark:bg-black">
+
       <div className="logo cursor-pointer">
         <Link to={"/"}>
-          {/* <img src={img.logo} alt="logo" className="w-32"/> */}
           <span className="text-black dark:text-white font-extrabold text-3xl">Abdullah</span>
         </Link>
       </div>

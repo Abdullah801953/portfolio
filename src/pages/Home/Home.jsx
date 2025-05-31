@@ -13,6 +13,7 @@ import "swiper/css";
 import "swiper/css/autoplay";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import Card from "../../components/Card/Card";
 
 const Home = () => {
   const [index, setIndex] = useState(1);
@@ -39,41 +40,47 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="col-span-12 lg:col-span-4 text-white">
-          <div className="bg-lightBg dark:bg-[#121214] w-full h-[650px] rounded-3xl flex flex-col items-center relative justify-center">
-            <div className="w-1/2 lg:w-4/5 mx-auto mt-10 mb-10">
-              <img src={img.my_profile} alt="profile_pic" loading="lazy" />
+          className="col-span-12 lg:col-span-4 text-white"
+        >
+          <div className="bg-lightBg dark:bg-[#121214] w-full h-auto sm:h-[650px] rounded-3xl flex flex-col items-center justify-center px-4 sm:px-6 py-10">
+
+            {/* Profile Image */}
+            <div className="w-28 sm:w-1/2 lg:w-4/5 mx-auto mt-4 sm:mt-10 mb-6 sm:mb-10">
+              <img
+                src={img.my_profile}
+                alt="profile_pic"
+                loading="lazy"
+                className="w-full h-auto object-contain rounded-full"
+              />
             </div>
-            <div className="text-center text-[40px] font-bold mb-4">
+
+            {/* Name */}
+            <div className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
               <h2 className="text-white">Abdullah Khan</h2>
             </div>
-            <div className="mx-auto text-center text-[16px] w-4/5 text-liColor mb-4">
-              <p className="text-white">I am a Web Developer based in New Delhi.</p>
+
+            {/* Bio / Description */}
+            <div className="mx-auto text-center text-sm sm:text-base md:text-lg w-full sm:w-4/5 text-liColor mb-4">
+              <p className="text-white">I am a Developer based in New Delhi.</p>
             </div>
-            <div className="flex justify-center gap-10 [&>div>a]:text-2xl text-liColor">
-              <div className="border rounded-lg px-2 py-2 w-10 h-10 text-white border-white">
-                <a href="#">
-                  <FaInstagram />
-                </a>
-              </div>
-              <div className="border rounded-lg px-2 py-2 w-10 h-10 text-white border-white">
-                <a href="#">
-                  <FaWhatsapp />
-                </a>
-              </div>
-              <div className="border rounded-lg px-2 py-2 w-10 h-10 text-white border-white">
-                <a href="#">
-                  <FaLinkedin />
-                </a>
-              </div>
-              <div className="border rounded-lg px-2 py-2 w-10 h-10 text-white border-white">
-                <a href="#">
-                  <FaGithubSquare />
-                </a>
-              </div>
+
+            {/* Social Links */}
+            <div className="flex justify-center flex-wrap gap-3 sm:gap-5 mt-4 [&>div>a]:text-lg sm:[&>div>a]:text-xl md:[&>div>a]:text-2xl text-liColor">
+              {[FaInstagram, FaWhatsapp, FaLinkedin, FaGithubSquare].map((Icon, idx) => (
+                <div
+                  key={idx}
+                  className="border rounded-lg flex items-center justify-center w-10 h-10 text-white border-white"
+                >
+                  <a href="#">
+                    <Icon />
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>
+
+
         {/* hero section start */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -100,56 +107,58 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-span-12 lg:col-span-8 text-white mt-8">
+          <div className="col-span-12 lg:col-span-8 text-white mt-10">
             <div className=" bg-lightBg dark:bg-[#121214] w-full h-auto rounded-3xl">
               <div className="px-5 pt-10">
                 <div className="text-[22px] font-bold">
                   <h3 className="text-white">Company I Worked With</h3>
                 </div>
               </div>
-              <div className="">
+              <div>
                 <Swiper
-                  className="mySwiper flex items-center mt-10"
                   modules={[Autoplay]}
                   loop={true}
                   slidesPerView={5}
+                  spaceBetween={30}
+                  allowTouchMove={false}
+                  speed={3000}
                   autoplay={{
                     delay: 1,
-                    disableOnInteraction: false, 
+                    disableOnInteraction: false,
                   }}
-                  speed={3000}
-                  spaceBetween={8}
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 2,
+                      spaceBetween: 10,
+                    },
+                    768: {
+                      slidesPerView: 3,
+                      spaceBetween: 20,
+                    },
+                    1024: {
+                      slidesPerView: 5,
+                      spaceBetween: 30,
+                    },
+                  }}
+                  className="mySwiper mt-10"
                 >
-                  <SwiperSlide>
-                    <img src={img.slide_one} alt="" className="w-[20px]" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={img.slide_two} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={img.slide_three} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={img.slide_four} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={img.slide_five} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={img.slide_one} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={img.slide_two} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={img.slide_three} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={img.slide_four} alt="" />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img src={img.slide_five} alt="" />
-                  </SwiperSlide>
+                  {[...Array(3)].flatMap(() => [
+                    img.slide_one,
+                    img.slide_two,
+                    img.slide_three,
+                    img.slide_four,
+                    img.slide_five
+                  ]).map((slide, index) => (
+                    <SwiperSlide key={index}>
+                      <div className="flex justify-center items-center h-24 ">
+                        <img
+                          src={slide}
+                          alt={`Company logo ${index}`}
+                          className="h-full w-auto object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
+                        />
+                      </div>
+                    </SwiperSlide>
+                  ))}
                 </Swiper>
               </div>
             </div>
@@ -163,30 +172,33 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="col-span-12 lg:col-span-12 w-full mx-auto h-auto bg-lightBg dark:bg-[#121214] rounded-3xl px-14 py-14">
+          className="col-span-12 lg:col-span-12 w-full mx-auto h-auto bg-lightBg dark:bg-[#121214] rounded-3xl px-4 sm:px-8 md:px-14 py-10 sm:py-14"
+        >
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
-            className="w-full lg:w-1/2 m-auto">
-            <div className="[&>h1]:text-[50px] text-white mb-6">
-              <h1 className="font-[500] text-center text-white">Works & Projects</h1>
+            className="w-full lg:w-1/2 m-auto"
+          >
+            <div className="mb-6">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium text-center text-white">
+                Works & Projects
+              </h1>
             </div>
-            <div className="[&>p]:text-[16px] text-liColor mb-6">
-              <p className="text-center text-white">
+            <div className="mb-6">
+              <p className="text-sm sm:text-base md:text-lg text-center text-white text-opacity-80">
                 Check out some of my design projects, meticulously crafted with
                 love and dedication, each one reflecting the passion and soul I
                 poured into every detail.
               </p>
             </div>
           </motion.div>
+
           <div className="[&>ul]:flex mb-5">
             <ul className="[&>li>a]:text-liColor gap-10">
               <li
-                className={
-                  index === 1 ? "border-b-[4px] border-orange-600" : ""
-                }
+                className={index === 1 ? "border-b-[4px] border-orange-600" : ""}
                 onClick={() => {
                   setIndex(1);
                 }}
@@ -194,9 +206,7 @@ const Home = () => {
                 <a href="#">All</a>
               </li>
               <li
-                className={
-                  index === 2 ? "border-b-[4px] border-orange-600" : ""
-                }
+                className={index === 2 ? "border-b-[4px] border-orange-600" : ""}
                 onClick={() => {
                   setIndex(2);
                 }}
@@ -204,9 +214,7 @@ const Home = () => {
                 <a href="#">Design</a>
               </li>
               <li
-                className={
-                  index === 3 ? "border-b-[4px] border-orange-600" : ""
-                }
+                className={index === 3 ? "border-b-[4px] border-orange-600" : ""}
                 onClick={() => {
                   setIndex(3);
                 }}
@@ -214,9 +222,7 @@ const Home = () => {
                 <a href="#">Game</a>
               </li>
               <li
-                className={
-                  index === 4 ? "border-b-[4px] border-orange-600" : ""
-                }
+                className={index === 4 ? "border-b-[4px] border-orange-600" : ""}
                 onClick={() => {
                   setIndex(4);
                 }}
@@ -224,9 +230,7 @@ const Home = () => {
                 <a href="#">Branding</a>
               </li>
               <li
-                className={
-                  index === 5 ? "border-b-[4px] border-orange-600" : ""
-                }
+                className={index === 5 ? "border-b-[4px] border-orange-600" : ""}
                 onClick={() => {
                   setIndex(5);
                 }}
@@ -235,250 +239,36 @@ const Home = () => {
               </li>
             </ul>
           </div>
-          <div className="">
-            {index === 1 ? (
+
+          <div>
+            {index === 1 && (
               <div className="grid grid-cols-12 gap-5">
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
-                  <div className="w-full">
-                    <img src={img.project1} alt="" loading="lazy" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <Link
-                        to={"https://nest-shop-project.netlify.app"}
-                        target="_blank"
-                      >
-                        <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Grocery App</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Nest Grocery Web App</h4>
-                  </div>
-                </div>
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
-                  <div className="w-full">
-                    <img src={img.project2} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <Link
-                        to={
-                          "https://mehtatransportcorporations-hi3pg6xa8-abdullah801953s-projects.vercel.app/"
-                        }
-                        target="_blank"
-                      >
-                        <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">
-                      Transportation Webstie
-                    </p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mehta Transport Corporations</h4>
-                  </div>
-                </div>
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
-                  <div className="w-full">
-                    <img src={img.project3} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <Link to={"https://fayaz-international-com.vercel.app/"}>
-                        <FaExternalLinkAlt
-                          className="text-xl text-center cursor-pointer"
-                          target="_blank"
-                        />
-                      </Link>
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">E-Education</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Fayaz International</h4>
-                  </div>
-                </div>
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
-                  <div className="w-full">
-                    <img src={img.work_four} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
-                  </div>
-                </div>
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
-                  <div className="w-full">
-                    <img src={img.work_three} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
-                  </div>
-                </div>
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative">
-                  <div className="w-full">
-                    <img src={img.work_one} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
-                  </div>
-                </div>
+                <Card />
               </div>
-            ) : (
-              ""
             )}
-            {index === 2 ? (
+            {index === 2 && (
               <div className="grid grid-cols-12 gap-5">
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
-                  <div className="w-full">
-                    <img src={img.work_one} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
-                  </div>
-                </div>
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
-                  <div className="w-full">
-                    <img src={img.work_one} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
-                  </div>
-                </div>
+                <Card />
               </div>
-            ) : (
-              ""
             )}
-            {index === 3 ? (
+            {index === 3 && (
               <div className="grid grid-cols-12 gap-5">
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
-                  <div className="w-full">
-                    <img src={img.work_one} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
-                  </div>
-                </div>
+                <Card />
               </div>
-            ) : (
-              ""
             )}
-            {index === 4 ? (
+            {index === 4 && (
               <div className="grid grid-cols-12 gap-5">
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
-                  <div className="w-full">
-                    <img src={img.work_one} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
-                  </div>
-                </div>
+                <Card />
               </div>
-            ) : (
-              ""
             )}
-            {index === 5 ? (
+            {index === 5 && (
               <div className="grid grid-cols-12 gap-5">
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
-                  <div className="w-full">
-                    <img src={img.work_one} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
-                  </div>
-                </div>
-                <div className="col-span-6 lg:col-span-4 w-30 h-[auto] rounded-lg bg-transparent border border-gray-500 border-t-0 relative z-0">
-                  <div className="w-full">
-                    <img src={img.work_one} alt="" />
-                  </div>
-                  <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center text-white opacity-0 hover:opacity-100 transition duration-300">
-                    <div className="rounded-full bg-orange-600 w-20 py-8 px-4 flex justify-center">
-                      <FaExternalLinkAlt className="text-xl text-center cursor-pointer" />
-                    </div>
-                  </div>
-                  <div className="pl-5 pt-10">
-                    <p className="text-lg text-liColor">Design</p>
-                  </div>
-                  <div className="text-2xl text-liColor pl-5 pb-10">
-                    <h4>Mobile Application Design</h4>
-                  </div>
-                </div>
+                <Card />
               </div>
-            ) : (
-              ""
             )}
           </div>
         </motion.div>
+
         {/* project section end */}
       </div>
     </div>
