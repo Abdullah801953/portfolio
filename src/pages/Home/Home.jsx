@@ -172,7 +172,7 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="col-span-12 lg:col-span-12 w-full mx-auto h-auto bg-lightBg dark:bg-[#121214] rounded-3xl px-4 sm:px-8 md:px-14 py-10 sm:py-14"
+          className="col-span-12 w-full mx-auto h-auto bg-lightBg dark:bg-[#121214] rounded-3xl px-4 sm:px-8 md:px-14 py-10 sm:py-14"
         >
           <motion.div
             initial={{ opacity: 0, y: 50 }}
@@ -188,54 +188,59 @@ const Home = () => {
             </div>
             <div className="mb-6">
               <p className="text-sm sm:text-base md:text-lg text-center text-white text-opacity-80">
-                Check out some of my design projects, meticulously crafted with
-                love and dedication, each one reflecting the passion and soul I
-                poured into every detail.
+                Check out some of my design projects, meticulously crafted with love
+                and dedication, each one reflecting the passion and soul I poured
+                into every detail.
               </p>
             </div>
           </motion.div>
 
-          <div className="[&>ul]:flex mb-5">
-            <ul className="[&>li>a]:text-liColor gap-10">
+          <div className="mb-8 overflow-x-auto">
+            <ul className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-10 justify-center min-w-max">
               <li
-                className={index === 1 ? "border-b-[4px] border-orange-600" : ""}
-                onClick={() => {
-                  setIndex(1);
-                }}
+                className={`pb-2 cursor-pointer ${index === 1 ? "border-b-[4px] border-orange-600" : ""
+                  }`}
+                onClick={() => setIndex(1)}
               >
-                <a href="#">All</a>
+                <a className="text-liColor hover:text-white transition-colors">
+                  All
+                </a>
               </li>
               <li
-                className={index === 2 ? "border-b-[4px] border-orange-600" : ""}
-                onClick={() => {
-                  setIndex(2);
-                }}
+                className={`pb-2 cursor-pointer ${index === 2 ? "border-b-[4px] border-orange-600" : ""
+                  }`}
+                onClick={() => setIndex(2)}
               >
-                <a href="#">Design</a>
+                <a className="text-liColor hover:text-white transition-colors">
+                  Design
+                </a>
               </li>
               <li
-                className={index === 3 ? "border-b-[4px] border-orange-600" : ""}
-                onClick={() => {
-                  setIndex(3);
-                }}
+                className={`pb-2 cursor-pointer ${index === 3 ? "border-b-[4px] border-orange-600" : ""
+                  }`}
+                onClick={() => setIndex(3)}
               >
-                <a href="#">Game</a>
+                <a className="text-liColor hover:text-white transition-colors">
+                  Game
+                </a>
               </li>
               <li
-                className={index === 4 ? "border-b-[4px] border-orange-600" : ""}
-                onClick={() => {
-                  setIndex(4);
-                }}
+                className={`pb-2 cursor-pointer ${index === 4 ? "border-b-[4px] border-orange-600" : ""
+                  }`}
+                onClick={() => setIndex(4)}
               >
-                <a href="#">Branding</a>
+                <a className="text-liColor hover:text-white transition-colors">
+                  Branding
+                </a>
               </li>
               <li
-                className={index === 5 ? "border-b-[4px] border-orange-600" : ""}
-                onClick={() => {
-                  setIndex(5);
-                }}
+                className={`pb-2 cursor-pointer ${index === 5 ? "border-b-[4px] border-orange-600" : ""
+                  }`}
+                onClick={() => setIndex(5)}
               >
-                <a href="#">Marketing</a>
+                <a className="text-liColor hover:text-white transition-colors">
+                  Marketing
+                </a>
               </li>
             </ul>
           </div>
@@ -243,27 +248,67 @@ const Home = () => {
           <div>
             {index === 1 && (
               <div className="grid grid-cols-12 gap-5">
-                <Card />
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
               </div>
             )}
             {index === 2 && (
               <div className="grid grid-cols-12 gap-5">
-                <Card />
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
               </div>
             )}
             {index === 3 && (
               <div className="grid grid-cols-12 gap-5">
-                <Card />
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
               </div>
             )}
             {index === 4 && (
               <div className="grid grid-cols-12 gap-5">
-                <Card />
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
               </div>
             )}
             {index === 5 && (
               <div className="grid grid-cols-12 gap-5">
-                <Card />
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
+                <div className="col-span-12 md:col-span-4 lg:col-span-4">
+                  <Card />
+                </div>
               </div>
             )}
           </div>
