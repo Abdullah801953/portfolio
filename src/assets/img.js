@@ -9,7 +9,7 @@ import work_three from "../assets/img/work_three.jpg";
 import work_four from "../assets/img/work_four.jpg";
 import author1 from "../assets/img/author-1.jpg"
 import author2 from "../assets/img/author-2.jpg"
-import my_profile from "../assets/img/my-profile.webp"
+import my_profile from "../assets/img/my-profile.png"
 import project1 from "../assets/img/project1.webp"
 import project2 from "../assets/img/project2.webp"
 import project3 from "../assets/img/project3.webp"

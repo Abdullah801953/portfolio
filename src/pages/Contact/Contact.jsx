@@ -2,6 +2,7 @@ import React from "react";
 import { IoLocation } from "react-icons/io5";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
+import { FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Contact = () => {
@@ -42,39 +43,49 @@ const Contact = () => {
                 {/* Left Box */}
                 <div className="md:col-span-5 w-full h-auto rounded-lg bg-transparent border border-gray-500 relative">
                   <div className="px-6 sm:px-8 pt-8 sm:pt-11">
-                    <div className="mb-8 sm:mb-10">
-                      <IoLocation className="text-2xl mb-2 text-orange-500" />
-                      <h4 className="text-lg sm:text-xl font-[500] text-liColor">
-                        Our Office:
-                      </h4>
-                      <span className="text-sm sm:text-base text-white opacity-50">
-                        Jurain, Dhaka Bangladesh
-                      </span>
+                    <div className="mb-8 sm:mb-10 flex items-center">
+                      <IoLocation className="text-2xl mr-4 text-orange-500" />
+                      <div>
+                        <h4 className="text-lg sm:text-xl font-[500] text-liColor">Our Office:</h4>
+                        <span className="text-sm sm:text-base text-white">Jamia Nagar, Okhla, New Delhi</span>
+                      </div>
                     </div>
-                    <div className="mb-8 sm:mb-10">
-                      <FaPhoneAlt className="text-2xl mb-2 text-orange-500" />
-                      <h4 className="text-lg sm:text-xl font-[500] text-liColor">
-                        Contact Number:
-                      </h4>
-                      <span className="text-sm sm:text-base text-white opacity-50">
-                        +1234321321
-                      </span>
+                    <div className="mb-8 sm:mb-10 flex items-center">
+                      <FaPhoneAlt className="text-2xl mr-4 text-orange-500" />
+                      <div>
+                        <h4 className="text-lg sm:text-xl font-[500] text-liColor">Contact Number:</h4>
+                        <span className="text-sm sm:text-base text-white">(+91) 9905866356</span>
+                      </div>
                     </div>
-                    <div className="mb-8 sm:mb-10">
-                      <IoMail className="text-2xl mb-2 text-orange-500" />
-                      <h4 className="text-lg sm:text-xl font-[500] text-liColor">
-                        Email Us:
-                      </h4>
-                      <span className="text-sm sm:text-base text-white opacity-50">
-                        websitename@mail.com
-                      </span>
+                    <div className="mb-8 sm:mb-10 flex items-center">
+                      <IoMail className="text-2xl mr-4 text-orange-500" />
+                      <div>
+                        <h4 className="text-lg sm:text-xl font-[500] text-liColor">Email Us:</h4>
+                        <span className="text-sm sm:text-base text-white">abdullahkhan99058@gmail.com</span>
+                      </div>
+                    </div>
+                    <div className="mb-8 sm:mb-10 flex items-center">
+                      <FaLinkedin className="text-2xl mr-4 text-orange-500" />
+                      <div>
+                        <h4 className="text-lg sm:text-xl font-[500] text-liColor">LinkedIn:</h4>
+                        <span className="text-sm sm:text-base text-white">
+                          <a
+                            href="https://linkedin.com/in/abdullah-99df"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-orange-400 hover:underline"
+                          >
+                            linkedin.com/in/abdullah-99df
+                          </a>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 {/* Right Box */}
                 <div className="md:col-span-7 w-full h-auto rounded-lg bg-transparent border border-gray-500 relative">
-                  <div className="px-6 sm:px-11 pt-8 sm:pt-11">
+                  <div className="px-6 sm:px-11 pt-8 sm:pt-11 pb-8">
                     <div className="flex flex-col md:flex-row gap-4 mb-5">
                       <div className="w-full">
                         <label className="block mb-2 text-sm sm:text-base">Full Name</label>
@@ -99,14 +110,21 @@ const Contact = () => {
                         />
                       </div>
                       <div className="mt-4">
-                        <button className="w-full sm:w-48 py-2 px-3 rounded-xl bg-orange-600 text-white text-sm sm:text-base">
+                        <a
+                          href="mailto:abdullahkhan99058@gmail.com?subject=Message%20from%20Portfolio&body=Hi%20Abdullah,%0A%0A"
+                          className="w-full sm:w-48 py-2 px-3 rounded-xl bg-orange-600 text-white text-sm sm:text-base inline-block text-center"
+                        >
                           Send Me Message <IoMail className="inline ml-1" />
-                        </button>
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
                 {/* End Grid */}
+              </div>
+
+              <div className="contact-info mt-10 text-white">
+                {/* Removed contact details as requested */}
               </div>
             </div>
           </div>

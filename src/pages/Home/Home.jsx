@@ -43,18 +43,14 @@ const Home = () => {
           className="col-span-12 lg:col-span-4 text-white"
         >
           <div className="bg-lightBg dark:bg-[#121214] w-full h-auto sm:h-[650px] rounded-3xl flex flex-col items-center justify-center px-4 sm:px-6 py-10">
-
-            {/* Profile Image */}
-            <div className="w-28 sm:w-1/2 lg:w-4/5 mx-auto mt-4 sm:mt-10 mb-6 sm:mb-10">
+            <div className="w-full flex justify-center mt-4 sm:mt-10 mb-6 sm:mb-10">
               <img
                 src={img.my_profile}
                 alt="profile_pic"
                 loading="lazy"
-                className="w-full h-auto object-contain rounded-full"
+                className="w-full max-w-[200px] sm:max-w-[300px] lg:max-w-[350px] h-auto object-contain rounded-full"
               />
             </div>
-
-            {/* Name */}
             <div className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
               <h2 className="text-white">Abdullah Khan</h2>
             </div>
