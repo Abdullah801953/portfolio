@@ -4,14 +4,14 @@ import { FaInstagram } from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithubSquare } from "react-icons/fa";
-import { FaDownload } from "react-icons/fa6";
+import { FaDownload } from "react-icons/fa";
+import { IoMail } from "react-icons/io5";
 import Typed from "typed.js";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import "swiper/css";
 import "swiper/css/autoplay";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Card from "../../components/Card/Card";
 
@@ -21,8 +21,7 @@ const Home = () => {
   React.useEffect(() => {
     const typed = new Typed(el.current, {
       strings: [
-        `I’m Abdullah Khan, a fullstack developer crafting user-centric
-      design with pixel-perfect precision.`,
+        `I’m Abdullah Khan, a fullstack developer crafting user-centric design and robust Mobile apps with pixel-perfect precision.`,
       ],
       typeSpeed: 20,
       showCursor: false,
@@ -42,40 +41,39 @@ const Home = () => {
           viewport={{ once: true }}
           className="col-span-12 lg:col-span-4 text-white"
         >
-          <div className="bg-lightBg dark:bg-[#121214] w-full h-auto sm:h-[650px] rounded-3xl flex flex-col items-center justify-center px-4 sm:px-6 py-10">
-            <div className="w-full flex justify-center mt-4 sm:mt-10 mb-6 sm:mb-10">
-              <img
-                src={img.my_profile}
-                alt="profile_pic"
-                loading="lazy"
-                className="w-full max-w-[200px] sm:max-w-[300px] lg:max-w-[350px] h-auto object-contain rounded-full"
-              />
-            </div>
-            <div className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-4">
-              <h2 className="text-white">Abdullah Khan</h2>
-            </div>
-
-            {/* Bio / Description */}
-            <div className="mx-auto text-center text-sm sm:text-base md:text-lg w-full sm:w-4/5 text-liColor mb-4">
-              <p className="text-white">I am a Developer based in New Delhi.</p>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex justify-center flex-wrap gap-3 sm:gap-5 mt-4 [&>div>a]:text-lg sm:[&>div>a]:text-xl md:[&>div>a]:text-2xl text-liColor">
-              {[FaInstagram, FaWhatsapp, FaLinkedin, FaGithubSquare].map((Icon, idx) => (
-                <div
-                  key={idx}
-                  className="border rounded-lg flex items-center justify-center w-10 h-10 text-white border-white"
-                >
-                  <a href="#">
-                    <Icon />
-                  </a>
-                </div>
-              ))}
+          <div className="bg-lightBg dark:bg-[#121214] w-full h-auto sm:h-[650px] rounded-3xl flex flex-col items-center justify-center" style={{ padding: '32px 19px' }}>
+            <div className="flex flex-col items-center w-full gap-7">
+              <div className="flex justify-center w-full">
+                <img
+                  src={img.my_profile}
+                  alt="profile_pic"
+                  loading="lazy"
+                  className="w-full max-w-[200px] sm:max-w-[300px] lg:max-w-[350px] h-auto object-contain rounded-full"
+                />
+              </div>
+              <div className="text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold">
+                <h2 className="text-white">Abdullah Khan</h2>
+              </div>
+              <div className="mx-auto text-center text-sm sm:text-base md:text-lg w-full sm:w-4/5 text-liColor">
+                <p className="text-white">I am a Developer based in New Delhi.</p>
+              </div>
+              <div className="flex justify-center flex-wrap gap-5 sm:gap-7 [&>div>a]:text-lg sm:[&>div>a]:text-xl md:[&>div>a]:text-2xl text-liColor">
+                {[FaInstagram, FaWhatsapp, FaLinkedin, FaGithubSquare].map(
+                  (Icon, idx) => (
+                    <div
+                      key={idx}
+                      className="border rounded-lg flex items-center justify-center w-10 h-10 text-white border-white"
+                    >
+                      <a href="#">
+                        <Icon />
+                      </a>
+                    </div>
+                  )
+                )}
+              </div>
             </div>
           </div>
         </motion.div>
-
 
         {/* hero section start */}
         <motion.div
@@ -83,22 +81,27 @@ const Home = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           viewport={{ once: true }}
-          className="col-span-12 lg:col-span-8 text-white">
-          <div className=" bg-lightBg dark:bg-[#121214] w-full h-[400px] rounded-3xl">
+          className="col-span-12 lg:col-span-8 text-white"
+        >
+          <div className="bg-lightBg dark:bg-[#121214] w-full h-[400px] rounded-3xl">
             <div className="px-10 py-10">
               <div className="mb-5">
                 <p className="text-white">Hello There!</p>
               </div>
               <div className="mb-1 leading-snug h-[170px]">
-                <h1 ref={el} className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-white"></h1>
+                <h1
+                  ref={el}
+                  className="text-2xl sm:text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-white"
+                ></h1>
               </div>
               <div className="flex items-center gap-5 mb-5">
                 <div className="w-3 h-3 bg-[#0f0] rounded-full"></div>
                 <p className="text-white">Available for Freelancing</p>
               </div>
-              <div className="[&>button]:bg-orange-600">
-                <button className="w-36 py-2 px-3 rounded-xl text-white">
-                  Download CV <FaDownload className="inline mb-2" />
+              <div className="[&>button]:bg-orange-600 flex flex-wrap gap-3 justify-start">
+                <button className="py-2 px-5 rounded-xl text-white flex items-center gap-2 whitespace-nowrap">
+                  <span>Download CV</span>
+                  <FaDownload className="text-sm" />
                 </button>
               </div>
             </div>
@@ -138,23 +141,25 @@ const Home = () => {
                   }}
                   className="mySwiper mt-10"
                 >
-                  {[...Array(3)].flatMap(() => [
-                    img.slide_one,
-                    img.slide_two,
-                    img.slide_three,
-                    img.slide_four,
-                    img.slide_five
-                  ]).map((slide, index) => (
-                    <SwiperSlide key={index}>
-                      <div className="flex justify-center items-center h-24 ">
-                        <img
-                          src={slide}
-                          alt={`Company logo ${index}`}
-                          className="h-full w-auto object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
-                        />
-                      </div>
-                    </SwiperSlide>
-                  ))}
+                  {[...Array(3)]
+                    .flatMap(() => [
+                      img.slide_one,
+                      img.slide_two,
+                      img.slide_three,
+                      img.slide_four,
+                      img.slide_five,
+                    ])
+                    .map((slide, index) => (
+                      <SwiperSlide key={index}>
+                        <div className="flex justify-center items-center h-24 ">
+                          <img
+                            src={slide}
+                            alt={`Company logo ${index}`}
+                            className="h-full w-auto object-contain grayscale opacity-80 hover:opacity-100 transition duration-300"
+                          />
+                        </div>
+                      </SwiperSlide>
+                    ))}
                 </Swiper>
               </div>
             </div>
@@ -184,9 +189,9 @@ const Home = () => {
             </div>
             <div className="mb-6">
               <p className="text-sm sm:text-base md:text-lg text-center text-white text-opacity-80">
-                Check out some of my design projects, meticulously crafted with love
-                and dedication, each one reflecting the passion and soul I poured
-                into every detail.
+                Check out some of my design projects, meticulously crafted with
+                love and dedication, each one reflecting the passion and soul I
+                poured into every detail.
               </p>
             </div>
           </motion.div>
@@ -194,8 +199,9 @@ const Home = () => {
           <div className="mb-8 overflow-x-auto">
             <ul className="flex gap-4 sm:gap-6 md:gap-8 lg:gap-10 justify-center min-w-max">
               <li
-                className={`pb-2 cursor-pointer ${index === 1 ? "border-b-[4px] border-orange-600" : ""
-                  }`}
+                className={`pb-2 cursor-pointer ${
+                  index === 1 ? "border-b-[4px] border-orange-600" : ""
+                }`}
                 onClick={() => setIndex(1)}
               >
                 <a className="text-liColor hover:text-white transition-colors">
@@ -203,8 +209,9 @@ const Home = () => {
                 </a>
               </li>
               <li
-                className={`pb-2 cursor-pointer ${index === 2 ? "border-b-[4px] border-orange-600" : ""
-                  }`}
+                className={`pb-2 cursor-pointer ${
+                  index === 2 ? "border-b-[4px] border-orange-600" : ""
+                }`}
                 onClick={() => setIndex(2)}
               >
                 <a className="text-liColor hover:text-white transition-colors">
@@ -212,8 +219,9 @@ const Home = () => {
                 </a>
               </li>
               <li
-                className={`pb-2 cursor-pointer ${index === 3 ? "border-b-[4px] border-orange-600" : ""
-                  }`}
+                className={`pb-2 cursor-pointer ${
+                  index === 3 ? "border-b-[4px] border-orange-600" : ""
+                }`}
                 onClick={() => setIndex(3)}
               >
                 <a className="text-liColor hover:text-white transition-colors">
@@ -221,8 +229,9 @@ const Home = () => {
                 </a>
               </li>
               <li
-                className={`pb-2 cursor-pointer ${index === 4 ? "border-b-[4px] border-orange-600" : ""
-                  }`}
+                className={`pb-2 cursor-pointer ${
+                  index === 4 ? "border-b-[4px] border-orange-600" : ""
+                }`}
                 onClick={() => setIndex(4)}
               >
                 <a className="text-liColor hover:text-white transition-colors">
@@ -230,8 +239,9 @@ const Home = () => {
                 </a>
               </li>
               <li
-                className={`pb-2 cursor-pointer ${index === 5 ? "border-b-[4px] border-orange-600" : ""
-                  }`}
+                className={`pb-2 cursor-pointer ${
+                  index === 5 ? "border-b-[4px] border-orange-600" : ""
+                }`}
                 onClick={() => setIndex(5)}
               >
                 <a className="text-liColor hover:text-white transition-colors">

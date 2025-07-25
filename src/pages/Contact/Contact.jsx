@@ -112,9 +112,10 @@ const Contact = () => {
                       <div className="mt-4">
                         <a
                           href="mailto:abdullahkhan99058@gmail.com?subject=Message%20from%20Portfolio&body=Hi%20Abdullah,%0A%0A"
-                          className="w-full sm:w-48 py-2 px-3 rounded-xl bg-orange-600 text-white text-sm sm:text-base inline-block text-center"
+                          className="w-full sm:w-48 py-2 px-3 rounded-xl bg-orange-600 text-white text-xs sm:text-base text-center flex items-center justify-center gap-2 min-w-0"
                         >
-                          Send Me Message <IoMail className="inline ml-1" />
+                          <span className="whitespace-nowrap">Send Me Message</span>
+                          <IoMail className="text-base sm:text-lg" />
                         </a>
                       </div>
                     </div>

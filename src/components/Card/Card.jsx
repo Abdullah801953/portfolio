@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
@@ -11,8 +12,8 @@ const Card = () => {
   ];
 
   return (
-    <div className="bg-white dark:bg-gray-900 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden cursor-pointer">
-      <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden rounded-t-xl">
+    <div className="bg-lightBg dark:bg-[#121214] rounded-3xl overflow-hidden cursor-pointer border border-[#232323]">
+      <div className="relative h-48 md:h-56 lg:h-64 overflow-hidden rounded-t-3xl">
         <Swiper
           modules={[Autoplay]}
           spaceBetween={0}
@@ -25,33 +26,33 @@ const Card = () => {
               <img
                 src={src}
                 alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover rounded-t-xl"
+                className="w-full h-full object-cover rounded-t-3xl"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 rounded-t-xl"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 rounded-t-3xl"></div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
 
-      <div className="p-6">
-        <h5 className="text-lg md:text-xl font-semibold text-gray-800 dark:text-white mb-2">
+      <div className="p-5">
+        <h5 className="text-lg md:text-xl font-semibold text-white mb-2">
           Wooden House, Florida
         </h5>
-        <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base leading-relaxed">
+        <p className="text-white text-opacity-80 text-sm md:text-base leading-relaxed">
           Enter a freshly updated and thoughtfully furnished peaceful home surrounded by ancient trees, stone walls, and open meadows.
         </p>
 
-        <div className="mt-6 flex gap-4">
+        <div className="mt-6 flex gap-3">
           <button
             aria-label="Like"
-            className="flex items-center justify-center w-10 h-10 rounded-full border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white transition-colors duration-200"
+            className="flex items-center justify-center w-10 h-10 rounded-xl border border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white transition-colors duration-200"
           >
             ❤️
           </button>
 
           <button
             aria-label="Bookmark"
-            className="flex items-center justify-center w-10 h-10 rounded-full border border-pink-500 text-pink-500 hover:bg-pink-500 hover:text-white transition-colors duration-200"
+            className="flex items-center justify-center w-10 h-10 rounded-xl border border-orange-600 text-orange-600 hover:bg-orange-600 hover:text-white transition-colors duration-200"
           >
             🔖
           </button>

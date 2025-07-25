@@ -68,36 +68,36 @@ const Navbar = () => {
         </button>
       </div>
 
-      <GiHamburgerMenu
-        className="text-3xl text-liColor block md:hidden relative"
-        onClick={() => {
-          setToggler(!toggler);
-        }}
-      />
 
-      {toggler ? (
-        <div className="hamburger-list py-5 absolute right-[137px] top-20 w-56 min-h-40 bg-hamBurgerListBgColor text-white block md:hidden z-10">
-          <ul className="text-black dark:text-white font-semibold [&>li]:py-2 px-6">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <a href="#">Service</a>
-            </li>
-            <li>
-              <a href="#">Works</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
-            </li>
-          </ul>
-        </div>
-      ) : (
-        ""
-      )}
+      <div className="relative block md:hidden">
+        <GiHamburgerMenu
+          className="text-3xl text-liColor relative z-20"
+          onClick={() => {
+            setToggler(!toggler);
+          }}
+        />
+        {toggler && (
+          <div className="hamburger-list absolute right-0 top-12 w-56 min-h-40 bg-hamBurgerListBgColor text-white z-10 rounded-xl shadow-lg">
+            <ul className="text-black dark:text-white font-semibold flex flex-col gap-3 px-6 py-6">
+              <li>
+                <Link to="/" onClick={() => setToggler(false)}>Home</Link>
+              </li>
+              <li>
+                <Link to="/about" onClick={() => setToggler(false)}>About</Link>
+              </li>
+              <li>
+                <Link to="/service" onClick={() => setToggler(false)}>Service</Link>
+              </li>
+              <li>
+                <Link to="/work" onClick={() => setToggler(false)}>Work</Link>
+              </li>
+              <li>
+                <Link to="/contact" onClick={() => setToggler(false)}>Contact</Link>
+              </li>
+            </ul>
+          </div>
+        )}
+      </div>
 
       <div className="nav-items hidden md:block">
         <ul className="flex gap-7 text-black dark:text-white cursor-pointer items-center justify-center hover:[&>li]:text-orange-700 [&>li]:ease-in-out duration-700 [&>li]:font-medium">

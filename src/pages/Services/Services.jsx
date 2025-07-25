@@ -9,6 +9,7 @@ import { FaMicrochip } from "react-icons/fa";
 
 const Services = () => {
   return (
+
     <div>
       {/* Services Section */}
       <motion.div
@@ -40,90 +41,62 @@ const Services = () => {
               >
                 <h1 className="font-[500] text-center text-2xl md:text-4xl lg:text-5xl">Quality Services</h1>
               </motion.div>
-
               {/* Cards */}
+              {/* Animated Service Cards */}
               <div className="grid grid-cols-12 gap-5 pt-10 auto-rows-fr">
-                {/* Card 1 */}
-                <div className="col-span-12 sm:col-span-6 lg:col-span-4 w-full h-auto rounded-lg bg-transparent border border-gray-500 overflow-hidden">
-                  <div className="pl-4 pt-8 md:pt-10">
-                    <FaGlobe className="text-4xl md:text-5xl text-liColor mb-4" />
-                  </div>
-                  <div className="pl-4 pb-3 md:pb-5">
-                    <h4 className="text-xl md:text-2xl text-liColor">Frontend Web Development</h4>
-                  </div>
-                  <div className="pl-4 pb-8 md:pb-10 pr-4">
-                    <p className="text-sm md:text-base text-white">
-                      Build stunning and responsive user interfaces using modern frontend technologies like React, Angular, or Vue.js.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="col-span-12 sm:col-span-6 lg:col-span-4 w-full h-auto rounded-lg bg-transparent border border-gray-500 overflow-hidden">
-                  <div className="pl-4 pt-8 md:pt-10">
-                    <FaCartPlus className="text-4xl md:text-5xl text-liColor mb-4" />
-                  </div>
-                  <div className="pl-4 pb-3 md:pb-5">
-                    <h4 className="text-xl md:text-2xl text-liColor">Fullstack Web Development</h4>
-                  </div>
-                  <div className="pl-4 pb-8 md:pb-10 pr-4">
-                    <p className="text-sm md:text-base text-white">
-                      Develop complete web solutions with expertise in both frontend and backend technologies, ensuring seamless integration.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="col-span-12 sm:col-span-6 lg:col-span-4 w-full h-auto rounded-lg bg-transparent border border-gray-500 overflow-hidden">
-                  <div className="pl-4 pt-8 md:pt-10">
-                    <CiMobile1 className="text-4xl md:text-5xl text-liColor mb-4" />
-                  </div>
-                  <div className="pl-4 pb-3 md:pb-5">
-                    <h4 className="text-xl md:text-2xl text-liColor">App Development</h4>
-                  </div>
-                  <div className="pl-4 pb-8 md:pb-10 pr-4">
-                    <p className="text-sm md:text-base text-white">
-                      Create high-quality mobile applications for Android and iOS platforms with a focus on performance and user experience.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 4 */}
-                <div className="col-span-12 sm:col-span-6 lg:col-span-4 w-full h-auto rounded-lg bg-transparent border border-gray-500 overflow-hidden">
-                  <div className="pl-4 pt-8 md:pt-10">
-                    <FaCode className="text-4xl md:text-5xl text-liColor mb-4" />
-                  </div>
-                  <div className="pl-4 pb-3 md:pb-5">
-                    <h4 className="text-xl md:text-2xl text-liColor">Software Development</h4>
-                  </div>
-                  <div className="pl-4 pb-8 md:pb-10 pr-4">
-                    <p className="text-sm md:text-base text-white">
-                      Design and develop custom software solutions tailored to your business needs, ensuring scalability and efficiency.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Card 5 */}
-                <div className="col-span-12 sm:col-span-6 lg:col-span-4 w-full h-auto rounded-lg bg-transparent border border-gray-500 overflow-hidden">
-                  <div className="pl-4 pt-8 md:pt-10">
-                    <FaMicrochip className="text-4xl md:text-5xl text-liColor mb-4" />
-                  </div>
-                  <div className="pl-4 pb-3 md:pb-5">
-                    <h4 className="text-xl md:text-2xl text-liColor">IoT Solutions</h4>
-                  </div>
-                  <div className="pl-4 pb-8 md:pb-10 pr-4">
-                    <p className="text-sm md:text-base text-white">
-                      Develop innovative IoT solutions to connect devices and systems, enabling smarter operations and data-driven decisions.
-                    </p>
-                  </div>
-                </div>
+                {[
+                  {
+                    icon: <FaGlobe className="text-4xl md:text-5xl text-liColor mb-4" />, 
+                    title: "Frontend Web Development",
+                    desc: "Build stunning and responsive user interfaces using modern frontend technologies like React, Angular, or Vue.js."
+                  },
+                  {
+                    icon: <FaCartPlus className="text-4xl md:text-5xl text-liColor mb-4" />, 
+                    title: "Fullstack Web Development",
+                    desc: "Develop complete web solutions with expertise in both frontend and backend technologies, ensuring seamless integration."
+                  },
+                  {
+                    icon: <CiMobile1 className="text-4xl md:text-5xl text-liColor mb-4" />, 
+                    title: "Mobile App Development",
+                    desc: "Create high-quality mobile applications for Android and iOS platforms with a focus on performance and user experience."
+                  },
+                  {
+                    icon: <FaCode className="text-4xl md:text-5xl text-liColor mb-4" />, 
+                    title: "Software Development",
+                    desc: "Design and develop custom software solutions tailored to your business needs, ensuring scalability and efficiency."
+                  },
+                  {
+                    icon: <FaMicrochip className="text-4xl md:text-5xl text-liColor mb-4" />, 
+                    title: "IoT Solutions",
+                    desc: "Develop innovative IoT solutions to connect devices and systems, enabling smarter operations and data-driven decisions."
+                  }
+                ].map((card, idx) => (
+                  <motion.div
+                    key={card.title}
+                    className="col-span-12 sm:col-span-6 lg:col-span-4 w-full h-auto rounded-lg bg-transparent border border-gray-500 overflow-hidden"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: idx * 0.15 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="pl-4 pt-8 md:pt-10">
+                      {card.icon}
+                    </div>
+                    <div className="pl-4 pb-3 md:pb-5">
+                      <h4 className="text-xl md:text-2xl text-liColor">{card.title}</h4>
+                    </div>
+                    <div className="pl-4 pb-8 md:pb-10 pr-4">
+                      <p className="text-sm md:text-base text-white">
+                        {card.desc}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
         </div>
       </motion.div>
-
-
       {/* Pricing Section */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
@@ -144,24 +117,28 @@ const Services = () => {
                 </h1>
               </div>
               <div className="grid grid-cols-12 gap-5 pt-10">
-                {[1, 2, 3, 4, 5].map((item) => (
-                  <div
+                {[1, 2, 3, 4, 5].map((item, idx) => (
+                  <motion.div
                     key={item}
-                    className="col-span-12 sm:col-span-6 lg:col-span-4 w-full h-auto rounded-lg bg-transparent border border-gray-500 relative flex flex-col justify-between"
+                    className="col-span-12 sm:col-span-6 lg:col-span-4 w-full h-auto"
+                    initial={{ opacity: 0, y: 40 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.7, delay: idx * 0.15 }}
+                    viewport={{ once: true }}
                   >
-                    <div className="rounded-lg border border-gray-500 p-5 m-2 flex flex-col h-full">
-                      <h5 className="text-xl md:text-2xl pb-4 md:pb-7 min-h-[60px] flex items-center border-b border-gray-500">
+                    <div className="rounded-2xl border border-gray-500 bg-[#18181b] dark:bg-[#18181b] shadow-xl flex flex-col items-center justify-between h-full px-6 py-8 gap-6">
+                      <h5 className="text-xl md:text-2xl font-semibold text-center border-b border-gray-600 pb-4 w-full min-h-[60px] flex items-center justify-center">
                         {item === 1
                           ? "Frontend Web Development"
                           : item === 2
                             ? "Fullstack Web Development"
                             : item === 3
-                              ? "App Development"
+                              ? "Mobile App Development"
                               : item === 4
                                 ? "Software Development"
-                                : "IoT Solutions"}
+                                : "IoT Solutions Development"}
                       </h5>
-                      <p className="text-base md:text-xl text-liColor pb-3 md:pb-5">
+                      <p className="text-base md:text-lg text-liColor text-center">
                         {item === 1
                           ? "Ideal for creating responsive and stunning user interfaces."
                           : item === 2
@@ -172,7 +149,7 @@ const Services = () => {
                                 ? "Custom software solutions tailored to your needs."
                                 : "Innovative IoT solutions for smarter operations."}
                       </p>
-                      <div className="text-orange-600 font-semibold text-2xl md:text-4xl">
+                      <div className="text-orange-600 font-bold text-2xl md:text-3xl text-center">
                         ₹{item === 1
                           ? "1500"
                           : item === 2
@@ -184,7 +161,7 @@ const Services = () => {
                                 : "5000"}
                         <span className="text-white text-base md:text-lg font-normal"> / Hour</span>
                       </div>
-                      <ul className="text-liColor pl-5 pr-5 pb-5 text-sm md:text-base list-disc">
+                      <ul className="text-liColor text-sm md:text-base list-disc pl-5 pr-5 flex flex-col gap-2">
                         {item === 1 && (
                           <>
                             <li>Responsive Design</li>
@@ -231,20 +208,17 @@ const Services = () => {
                           </>
                         )}
                       </ul>
-                      <div className="mt-auto">
-                        <button className="w-full sm:w-36 py-2 px-3 rounded-xl bg-orange-600 text-white text-sm md:text-base">
-                          Order Now <FaCartPlus className="inline" />
-                        </button>
-                      </div>
+                      <button className="w-full py-2 px-3 rounded-xl bg-orange-600 text-white text-base font-semibold mt-2 flex items-center justify-center gap-2">
+                        Order Now <span className="text-lg"><FaCartPlus /></span>
+                      </button>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           </div>
         </div>
       </motion.div>
-
     </div>
   );
 };

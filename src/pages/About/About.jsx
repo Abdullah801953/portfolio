@@ -23,10 +23,14 @@ const About = () => {
         className="grid grid-cols-1 lg:grid-cols-12 gap-7"
       >
         {/* Profile Image */}
-        <div className="col-span-12 lg:col-span-4 text-white">
-          <div className="bg-lightBg dark:bg-[#121214] w-full h-[470px] rounded-3xl flex flex-col items-center relative">
-            <div className="w-3/4 sm:w-1/2 lg:w-4/5 mx-auto mt-10 flex justify-center mb-9">
-              <img src={img.my_profile} alt="profile_pic" className="w-full h-auto object-cover" />
+        <div className="col-span-12 lg:col-span-4 text-white flex items-center justify-center">
+          <div className="bg-lightBg dark:bg-[#121214] w-full min-h-[520px] rounded-3xl flex flex-col items-center justify-center relative">
+            <div className="flex justify-center items-center h-full">
+              <img 
+                src={img.my_profile} 
+                alt="profile_pic" 
+                className="w-60 h-60 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full object-cover" 
+              />
             </div>
           </div>
         </div>
@@ -39,7 +43,7 @@ const About = () => {
           viewport={{ once: true }}
           className="col-span-12 lg:col-span-8 text-white"
         >
-          <div className="bg-lightBg dark:bg-[#121214] w-full h-auto lg:h-[470px] rounded-3xl">
+          <div className="bg-lightBg dark:bg-[#121214] w-full min-h-[520px] rounded-3xl flex items-center">
             <div className="px-6 sm:px-10 py-10">
               <h1 className="text-2xl sm:text-3xl lg:text-[40px] mb-5 leading-snug">
                 I’m Abdullah Khan, a fullstack and mobile app developer.
@@ -156,35 +160,32 @@ const About = () => {
         viewport={{ once: true }}
         className="w-full mt-6"
       >
-        <div className="bg-lightBg dark:bg-[#121214] w-full h-auto lg:h-[560px] rounded-3xl flex flex-col items-center">
-          <div className="w-full lg:w-4/5 mx-auto mt-10">
-            <h6 className="text-center text-sm text-liColor mb-2 uppercase tracking-wide">Testimonials</h6>
-            <h1 className="text-2xl sm:text-[40px] font-medium text-center text-white mb-7">
-              What Our Clients Say
-            </h1>
-
+        <div className="bg-lightBg dark:bg-[#121214] w-full h-auto lg:min-h-[520px] rounded-3xl flex flex-col items-center justify-center py-12 px-2 sm:px-0">
+          <div className="w-full max-w-2xl mx-auto">
+            <h6 className="text-center text-sm text-liColor mb-1 uppercase tracking-widest font-semibold">Testimonials</h6>
+            <h1 className="text-2xl sm:text-4xl font-bold text-center text-white mb-8 tracking-tight">What Our Clients Say</h1>
             <Swiper
               modules={[Autoplay, Pagination, Navigation]}
               spaceBetween={30}
               slidesPerView={1}
               loop={true}
               autoplay={{ delay: 4000, disableOnInteraction: false }}
-              className="w-full px-4"
+              className="w-full"
             >
               {[img.author2, img.author1].map((authorImg, idx) => (
-                <SwiperSlide key={idx} className="flex flex-col items-center">
-                  <div className="border border-gray-300 rounded-xl w-full px-5 py-5 flex flex-col items-center gap-4 text-sm sm:text-base text-black dark:text-white">
-                    <img src={authorImg} alt="author" className="w-14 rounded-full" />
-                    <p className="text-center px-2 sm:px-4 leading-relaxed">
+                <SwiperSlide key={idx} className="flex flex-col items-center justify-center">
+                  <div className="bg-white dark:bg-[#18181b] border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg w-full px-6 py-8 flex flex-col items-center gap-4 text-base text-black dark:text-white transition-all duration-300">
+                    <img src={authorImg} alt="author" className="w-16 h-16 rounded-full object-cover border-2 border-orange-500 mb-2" />
+                    <p className="text-center px-2 sm:px-4 leading-relaxed font-medium italic">
                       {idx === 0
                         ? "Financial planners help people invest and save efficiently. They provide valuable advice tailored to individual needs."
                         : "This is an amazing product. It helped me a lot and I recommend it to everyone looking for quality solutions."}
                     </p>
-                    <div className="text-center">
-                      <h5 className="font-semibold text-lg sm:text-xl">
+                    <div className="text-center mt-2">
+                      <h5 className="font-semibold text-lg sm:text-xl text-orange-600">
                         {idx === 0 ? "Zonathon Doe" : "Sarah Lee"}
                       </h5>
-                      <span className="text-xs opacity-70">
+                      <span className="text-xs opacity-70 block mt-1">
                         {idx === 0 ? "CEO & Founder X" : "Designer"}
                       </span>
                     </div>
